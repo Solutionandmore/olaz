@@ -5,12 +5,14 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: "Missing oauth_code" });
     }
 
-    // Gửi dữ liệu đến webhook n8n
-    await fetch("https://primary-production-574f.up.railway.app/webhook/zalo_callback", {
+    // Gửi oauth_code đến webhook của n8n
+    const response = await fetch("https://primary-production-574f.up.railway.app/webhook/zalo_callback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ oauth_code: code, state: state || "No state provided" })
     });
 
-    res.json({ message: "Zalo OAuth Code Sent to n8n", oauth_code: code });
+    // Phản hồi lại kết quả
+    const responseData = await response.json();
+    res.json({ message: "Zalo OAuth Code Sent to n8n", oauth_code: code, n8n_response: responseData });
 }
