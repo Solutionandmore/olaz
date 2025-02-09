@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         }
 
         // Gửi mã này đến Webhook n8n của bạn
-        const webhookUrl = "https://primary-production-574f.up.railway.app/webhook/zalo_callback";
+        const webhookUrl = "https://primary-production-574f.up.railway.app/webhook-test/zalo_callback";
 
         try {
             const response = await fetch(webhookUrl, {
