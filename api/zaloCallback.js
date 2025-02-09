@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     }
 
     // Gửi oauth_code đến webhook của n8n
-    const response = await fetch("https://primary-production-574f.up.railway.app/webhook/zalo_callback", {
+    const response = await fetch("https://primary-production-574f.up.railway.app/webhook-test/zalo_callback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ oauth_code: code, state: state || "No state provided" })
