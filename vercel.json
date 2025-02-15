@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/redirect",
+      "destination": "https://oauth.zaloapp.com/v4/oa/permission?app_id=2660693949023071086&redirect_uri=https%3A%2F%2Folaz-phuoc-thien-les-projects.vercel.app%2Fapi%2FzaloCallback",
+      "permanent": false
+    }
+  ]
+}
